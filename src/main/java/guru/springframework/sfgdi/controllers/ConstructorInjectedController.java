@@ -1,6 +1,7 @@
 package guru.springframework.sfgdi.controllers;
 
 import guru.springframework.sfgdi.services.GreatingService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class ConstructorInjectedController {
     private final GreatingService greatingService;
 
-    public ConstructorInjectedController(GreatingService greatingService) {
+    public ConstructorInjectedController(@Qualifier("constructorGreetingService") GreatingService greatingService) {
         this.greatingService = greatingService;
     }
 
